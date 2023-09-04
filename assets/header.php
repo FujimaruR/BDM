@@ -33,7 +33,7 @@
         </div>
 
         <?php
-            $_GET['logged'] = '4';
+            $_GET['logged'] = '2';
             include_once('assets/headerSettings.php');
         ?> 
 

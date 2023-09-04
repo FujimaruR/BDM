@@ -1,4 +1,4 @@
-<footer class="py-3 navbar-dark bg-dark mt-auto">
+<footer class="py-3 navbar-dark bg-light mt-auto">
     <div class="container">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
             <li class="nav-item"><a href="./main.php" class="nav-link px-2 text-muted">Inicio</a></li>
