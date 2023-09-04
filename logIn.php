@@ -9,44 +9,61 @@
       href="http://localhost/BDM/dependencies/bootstrap-5.3.0-alpha3-dist/css/bootstrap.min.css">
     <title>Login</title>
 </head>
-<body>
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+<body class="d-flex flex-column min-vh-100" style="margin-top: 3.5em;">
+    <?php
+        include_once('assets/header.php');
+    ?>
+
+    <div class="container mt-5 mb-5">
+        
+        <div class="card cardLogin" style="width: 20em;">
+            <div class="card-body">
+                <legend>Inicia sesión</legend>
+
+                <form method="POST" action="./main.php">
+                    <div class="mb-3">
+                        <label for="formControlUserName" class="form-label">Usuario</label>
+                        <input class="form-control" id="formControlUserName" placeholder="Nombre de usuario...">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="formControlPassword" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="formControlPassword" placeholder="Contraseña...">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="formControlTypeUser" class="form-label">Tipo de usuario</label>
+                        <select class="form-select" aria-label="Default select example" id="formControlTypeUser">
+                            <option selected></option>
+                            <option value="1">Comprador</option>
+                            <option value="2">Vendedor</option>
+                            <option value="3">Administrador</option>
+                        </select>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckRememberUser">
+                        <label class="form-check-label" for="flexCheckRememberUser">
+                            Recordar usuario
+                        </label>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-outline-warning" onclick="validateInfo();">Iniciar sesión</button>
+                    </div>
+
+                </form>
+                
+                <br>
+                <a href="./signUp.php" class="link-secondary">¿No tienes cuenta? Crea un usuario</a>
+            </div>
+        </div>
+
     </div>
-  </div>
-</nav>
-    
+
+    <?php
+        include_once('assets/footer.php');
+    ?>
 </body>
 </html>

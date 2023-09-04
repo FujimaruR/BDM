@@ -4,6 +4,6 @@
             <li class="nav-item"><a href="./main.php" class="nav-link px-2 text-muted">Inicio</a></li>
             <li class="nav-item"><a href="./index.php" class="nav-link px-2 text-muted">Sobre nosotros</a></li>
         </ul>
-        <p class="text-center text-muted">&copy; 2022 LMAD Company, Inc</p>
+        <p class="text-center text-muted">&copy; 2023 LMAD Company, Inc</p>
     </div>
 </footer>
