@@ -5,7 +5,8 @@
             alt="" width="30" height="24" class="d-inline-block align-text-top">
               BDM shop
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         
@@ -19,9 +20,9 @@
                     <i class="bi bi-people-fill"></i> Comunidad
                     </a>
                 <ul class="dropdown-menu dropdown-menu-dark">
-                    <li><a class="dropdown-item" href="./searchFilterComunity.php">Administradores</a></li>    
-                    <li><a class="dropdown-item" href="./searchFilterComunity.php">Compradores</a></li>
-                    <li><a class="dropdown-item" href="./searchFilterComunity.php">Vendedores</a></li>              
+                    <li><a class="dropdown-item" href="./searchFilterCommunity.php">Administradores</a></li>    
+                    <li><a class="dropdown-item" href="./searchFilterCommunity.php">Compradores</a></li>
+                    <li><a class="dropdown-item" href="./searchFilterCommunity.php">Vendedores</a></li>              
                 </ul>
             </li>
             </ul>
@@ -33,7 +34,7 @@
         </div>
 
         <?php
-            $_GET['logged'] = '2';
+            $_GET['logged'] = '1';
             include_once('assets/headerSettings.php');
         ?> 
 

@@ -53,7 +53,8 @@
                     </div>
 
                     <div class="d-grid gap-2">
-                     <button type="submit" class="btn btn-outline-info" style="background-color: purple; color: white;" onclick="validateInfo();">Iniciar sesión</button>
+                     <button type="submit" class="btn btn-outline-info" style="background-color: purple; color: white;" 
+                     onclick="validateInfo();">Iniciar sesión</button>
                      </div>
 
                 </form>
