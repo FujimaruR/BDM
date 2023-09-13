@@ -9,6 +9,7 @@
       href="http://localhost/BDM/dependencies/bootstrap-5.3.0-alpha3-dist/css/bootstrap.min.css">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
       <link rel='stylesheet' type='text/css' media='screen' href='./style/logIn.css'>
+      <link rel="shortcut icon" href="http://localhost/BDM/resources/kirby.png">
       <script src='./scripts/login.js'></script>
     <title>Login</title>
 </head>

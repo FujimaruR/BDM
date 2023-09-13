@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container-fluid container">
         <a class="navbar-brand" href="./main.php">
-            <img src="https://w7.pngwing.com/pngs/39/550/png-transparent-kirby-s-return-to-dream-land-kirby-s-dream-land-kirby-s-epic-yarn-kirby-super-star-kirby-triple-deluxe-kirby-heart-nintendo-boss-thumbnail.png" 
+            <img src="http://localhost/BDM/resources/kirby.png" 
             alt="" width="30" height="24" class="d-inline-block align-text-top">
               BDM shop
         </a>

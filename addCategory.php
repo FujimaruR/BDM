@@ -11,6 +11,7 @@
     <link rel='stylesheet' type='text/css' media='screen' href='./style/sectionBarVariant.css'>
     <script src='./scripts/addCategory.js'></script>
     <link rel='stylesheet' type='text/css' media='screen' href='./style/toast.css'>
+    <link rel="shortcut icon" href="http://localhost/BDM/resources/kirby.png">
     <script src='./scripts/toast.js'></script>
     <title>BDM Shop</title>
 </head>
