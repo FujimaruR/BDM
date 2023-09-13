@@ -105,7 +105,19 @@
     flex-wrap: wrap;
 }
 
+.cardbt{
+    position: absolute;
+    text-decoration: none;
+    padding: 1.2em 1.5em;
+    width: 100%;
+    bottom: 0;
+}
+
 article>.cta{
+    border-radius: 0em;
+}
+
+article>.cardbt{
     border-radius: 0em;
 }
 
@@ -250,6 +262,12 @@ body{
     .last-section .contenedor-textos-main{
         width: 100%;
         margin-bottom: 2em;
+    }
+
+    
+
+    .info div a{
+        margin-left: 1%;
     }
 }
 
