@@ -1,6 +1,8 @@
-<a type="button" class="btn btn-outline-light me-3" href="./wishList.php"><i class="bi bi-bag-heart"></i> Mis listas</a>
+<div class="d-flex flex-column flex-md-row">
+    <a type="button" class="btn btn-outline-light me-3 mb-3 mb-md-0" href="./wishList.php"><i class="bi bi-bag-heart"></i> Mis listas</a>
 
-<a type="button" class="btn btn-outline-light me-3" href="./shoppingCart.php"><i class="bi bi-cart"></i> Carrito</a>
+    <a type="button" class="btn btn-outline-light me-3 mb-3 mb-md-0" href="./shoppingCart.php"><i class="bi bi-cart"></i> Carrito</a>
+</div>
 
 <div class="dropdown text-end">
     <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -14,6 +16,6 @@
         <li><a class="dropdown-item" href="./quotationClient.php">Solicitudes de cotización</a></li>
         <li><a class="dropdown-item" href="./settings.php">Configuración</a></li>
         <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+        <li><a class="dropdown-item" href="index.php">Cerrar sesión</a></li>
     </ul>
 </div>

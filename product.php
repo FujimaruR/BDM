@@ -60,7 +60,6 @@
 
                 <?php 
                     $_GET['userType'] = '1';
-                    $_GET['buyQuotation'] = '1';
 
                     include_once('assets/productSettings.php');
                 ?>

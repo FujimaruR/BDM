@@ -4,7 +4,14 @@
         <div class="card-body">
             <h5 class="card-title"><?php echo $productName; ?></h5>
             <p class="card-text">$ <?php echo $productPrice; ?></p>
-            <a href="./product.php" class="btn btn-warning">Ver más</a>
+            <?php
+            if ($productId === '5') {
+                $buyQuotation = '2';
+            } else {
+                $buyQuotation = '1';
+            }
+            ?>
+            <a href="./product.php?buyQuotation=<?php echo $buyQuotation; ?>" class="btn btn-warning">Ver más</a>
             <!--<?php echo $productId; ?> -->
         </div>
     </div>
