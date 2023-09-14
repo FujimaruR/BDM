@@ -27,6 +27,7 @@
 
             <div class="col-md">
                 <?php
+                    $_GET['logged'] = '1';
                     include_once('assets/tabGallery.php');
                 ?>
             </div>

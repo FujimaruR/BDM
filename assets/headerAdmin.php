@@ -1,6 +1,8 @@
-<a type="button" class="btn btn-outline-light me-3" href="./approveProducts.php"><i class="bi bi-bag-check"></i> Aprobar producto</a>
+<div class="d-flex flex-column flex-md-row">
+    <a type="button" class="btn btn-outline-light me-3 mb-3 mb-md-0" href="./approveProducts.php"><i class="bi bi-bag-check"></i>Aprobar producto</a>
 
-<a type="button" class="btn btn-outline-light me-3" href="./addCategory.php"><i class="bi bi-journal-plus"></i> Agregar Categoría</a>
+    <a type="button" class="btn btn-outline-light me-3 mb-3 mb-md-0" href="./addCategory.php"><i class="bi bi-journal-plus"></i>Categoría</a>
+</div>
 
 <div class="dropdown text-end">
     <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">

@@ -18,6 +18,7 @@
 
 <body class="d-flex flex-column min-vh-100" style="margin-top: 3.5em;" onload="setDummyInfo();">
     <?php
+        $_GET['logged'] = '1';
         include_once('assets/header.php');
     ?>
 

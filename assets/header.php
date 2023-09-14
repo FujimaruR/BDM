@@ -34,7 +34,6 @@
         </div>
 
         <?php
-            $_GET['logged'] = '1';
             include_once('assets/headerSettings.php');
         ?> 
 

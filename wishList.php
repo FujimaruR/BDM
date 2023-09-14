@@ -23,6 +23,7 @@
     </header>
 
     <?php
+        $_GET['logged'] = '1';
         include_once('assets/header.php');
     ?>
 
