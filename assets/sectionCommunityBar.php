@@ -23,4 +23,12 @@
         include('assets/itemCardCommunity.php');
     ?>
 
+    <?php
+        $userName = 'Otaku';
+        $userType = 'Cliente';
+        $userImg = './resources/Lilliel.png';
+        $userId = '4';
+        include('assets/itemCardCommunity.php');
+    ?>
+
 </div>

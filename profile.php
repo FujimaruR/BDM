@@ -74,7 +74,6 @@
             <div class="card-body">
 
                 <?php
-                    $_GET['userType'] = '1';
                     include_once('assets/profileSettings.php');
                 ?> 
 

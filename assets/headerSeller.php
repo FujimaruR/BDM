@@ -8,7 +8,7 @@
         alt="mdo" width="32" height="32" class="rounded-circle">
     </a>
     <ul class="dropdown-menu dropdown-menu-dark text-small">
-        <li><a class="dropdown-item" href="./profile.php">Ver perfil</a></li>
+        <li><a class="dropdown-item" href="./profile.php?userType=2">Ver perfil</a></li>
         <li><a class="dropdown-item" href="./mySales.php">Mis ventas</a></li>
         <li><a class="dropdown-item" href="./quotationSeller.php">Solicitudes de cotización</a></li>
         <li><a class="dropdown-item" href="./settings.php">Configuración</a></li>

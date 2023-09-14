@@ -11,4 +11,7 @@
     else if($_GET['userType'] == '4'){
         include_once('assets/profileSuperAdmin.php');
     }
+    else if($_GET['userType'] == '5'){
+        include_once('assets/profileClientPrivate.php');
+    }
 ?>

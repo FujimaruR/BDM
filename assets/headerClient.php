@@ -10,7 +10,7 @@
         alt="mdo" width="32" height="32" class="rounded-circle">
     </a>
     <ul class="dropdown-menu dropdown-menu-dark text-small">
-        <li><a class="dropdown-item" href="./profile.php">Ver perfil</a></li>
+        <li><a class="dropdown-item" href="./profile.php?userType=1">Ver perfil</a></li>
         <li><a class="dropdown-item" href="./myShopping.php">Mis compras</a></li>
         <li><a class="dropdown-item" href="./addWishList.php">Nueva lista de deseos</a></li>
         <li><a class="dropdown-item" href="./quotationClient.php">Solicitudes de cotización</a></li>
