@@ -3,10 +3,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     include('../BDM/BackEnd/connection/cn_db.php');
 
-    $name = trim($_POST['usuario']);
-    $email = trim($_POST['correoLogin']);
-    $contra = trim($_POST['Password']);
-    $tuser = 1;
+    $name = trim($_POST['formName']);
+    $fecha_nacimiento = trim($_POST['trip-start']);
+    $sexo = trim($_POST['formGender']);
+    $nomcom = trim($_POST['formUserName']);
+    $email = trim($_POST['formEmail']);
+    $contra = trim($_POST['formPassword']);
+    $tuser = trim($_POST['formRole']);
     $fecha_registro = date("d/m/y");
 
     $hashed_password = password_hash($contra, PASSWORD_DEFAULT);
@@ -53,10 +56,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 header("Location: ../Front/registro.php?error=Error%20al%20subir%20el%20archivo.");
                 exit();
             }
-            
-            $nomcom = trim($_POST['usuarioNombre']);
-            $fecha_nacimiento = trim($_POST['R_FECHA']);
-            $sexo = isset($_POST['genderSwitch']) && $_POST['genderSwitch'] == '1' ? 1 : 0;
             $user_id = $conn->lastInsertId();
 
             try {

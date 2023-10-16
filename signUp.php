@@ -30,7 +30,7 @@ include("../BDM/backEnd/registerUser.php");
             <div class="row">
                 <div class="col-md form-group">
                     <label class="form-label">Nombre</label>
-                    <input class="form-control" id="formName" placeholder="Escribe tu nombre completo..." required>
+                    <input class="form-control" id="formName" name="formName" placeholder="Escribe tu nombre completo..." required>
                 </div>
             </div>
 
@@ -42,7 +42,7 @@ include("../BDM/backEnd/registerUser.php");
 
                 <div class="col-md form-group">
                     <label class="form-label">Sexo</label>
-                    <select class="form-select" id="formGender" required>
+                    <select class="form-select" id="formGender" name="formGender" required>
                         <option selected value="">Selecciona tu sexo</option>
                         <option value="1">Hombre</option>
                         <option value="2">Mujer</option>                     
@@ -55,12 +55,12 @@ include("../BDM/backEnd/registerUser.php");
             <div class="row">
                 <div class="col-md form-group">
                     <label class="form-label">Nombre de usuario</label>
-                    <input class="form-control" id="formUserName" placeholder="Crea tu nombre de usuario..." required>
+                    <input class="form-control" id="formUserName" name="formUserName" placeholder="Crea tu nombre de usuario..." required>
                 </div>
 
                 <div class="col-md form-group">
                     <label class="form-label">Correo electrónico</label>
-                    <input type="email" class="form-control" id="formEmail" placeholder="nombre@ejemplo.com" required>
+                    <input type="email" class="form-control" id="formEmail" name="formEmail" placeholder="nombre@ejemplo.com" required>
                 </div>                
             </div>
 
@@ -72,7 +72,7 @@ include("../BDM/backEnd/registerUser.php");
 
                 <div class="col-md form-group">
                     <label class="form-label">Tipo de usuario</label>
-                    <select class="form-select" id="formRole" required>
+                    <select class="form-select" id="formRole" name="formRole" required>
                         <option selected value="">Selecciona tu rol de usuario</option>
                         <option value="1">Comprador</option>
                         <option value="2">Vendedor</option>
@@ -83,7 +83,7 @@ include("../BDM/backEnd/registerUser.php");
             <div class="row">
                 <div class="col-md form-group">
                     <label class="form-label">Contraseña</label>
-                    <input class="form-control" type="password" id="formPassword" placeholder="Crea una contraseña..." required>
+                    <input class="form-control" type="password" id="formPassword" name="formPassword" placeholder="Crea una contraseña..." required>
                 </div>
 
                 <div class="col-md form-group">
