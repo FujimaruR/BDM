@@ -19,13 +19,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         $extension = pathinfo($nombreArchivo, PATHINFO_EXTENSION);
         if (!in_array(strtolower($extension), $extensionesPermitidas)) {
-            header("Location: ../singUp.php?error=Archivo%20no%20permitido.");
+            header("Location: ../signUp.php?error=Archivo%20no%20permitido.");
             exit();
         }
 
         $contenidoArchivo = file_get_contents($rutaTempArchivo);
     } else {
-        header("Location: ../singUp.php?error=Error%20al%20subir%20el%20archivo.");
+        header("Location: ../signUp.php?error=Error%20al%20subir%20el%20archivo.");
         exit();
     }
 
@@ -34,14 +34,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     try {
 
-        $consulta_email = "SELECT * FROM tb_usuarios WHERE email = :email";
+        $consulta_email = "SELECT * FROM tb_usuarios WHERE email = :email AND tuser = :tuser";
 
         $stmt_email = $conn->prepare($consulta_email);
         $stmt_email->bindParam(':email', $email);
+        $stmt_email->bindParam(':tuser', $tuser);
         $stmt_email->execute();
 
         if ($stmt_email->rowCount() > 0) {
-            header("Location: ../singUp.php?error=Este%20correo%20electrónico%20ya%20está%20registrado.");
+            header("Location: ../signUp.php?error=Este%20correo%20electrónico%20ya%20está%20registrado.");
             exit();
         }
 
@@ -64,7 +65,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             header("Location: ../main.php");
             exit(); 
         } else {
-            header("Location: ../singUp.php?error=Error%20en%20la%20creacion%20del%20usuario.");
+            header("Location: ../signUp.php?error=Error%20en%20la%20creacion%20del%20usuario.");
             exit();
         }
     } catch(PDOException $e) {

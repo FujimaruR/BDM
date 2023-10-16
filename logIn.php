@@ -1,3 +1,7 @@
+<?php
+session_start();
+include("../BDM/backEnd/loginUser.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,20 +30,20 @@
             <div class="card-body">
                 <legend>Inicia sesión</legend>
 
-                <form method="POST" action="./main.php">
+                <form method="post" action="">
                     <div class="mb-3">
                         <label for="formControlUserName" class="form-label">Usuario</label>
-                        <input class="form-control" id="formControlUserName" placeholder="Nombre de usuario...">
+                        <input class="form-control" id="formControlUserName" name="formControlUserName" placeholder="Correo del usuario...">
                     </div>
 
                     <div class="mb-3">
                         <label for="formControlPassword" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" id="formControlPassword" placeholder="Contraseña...">
+                        <input type="password" class="form-control" id="formControlPassword" name="formControlPassword" placeholder="Contraseña...">
                     </div>
 
                     <div class="mb-3">
                         <label for="formControlTypeUser" class="form-label">Tipo de usuario</label>
-                        <select class="form-select" aria-label="Default select example" id="formControlTypeUser">
+                        <select class="form-select" aria-label="Default select example" id="formControlTypeUser" name="formControlTypeUser">
                             <option selected></option>
                             <option value="1">Comprador</option>
                             <option value="2">Vendedor</option>
@@ -60,7 +64,11 @@
                      </div>
 
                 </form>
-                
+                <?php
+                if (isset($_GET['error'])) {
+                    echo "Error: " . urldecode($_GET['error']);
+                }
+                ?>
                 <br>
                 <a href="./signUp.php" class="link-secondary">¿No tienes cuenta? Crea un usuario</a>
             </div>
