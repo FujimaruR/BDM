@@ -1,3 +1,7 @@
+<?php
+session_start();
+include("../backEnd/registerUser.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,17 +25,12 @@
     ?>
    
     <div class="container mt-5 mb-5">
-        <form method="POST" action="./main.php">
+        <form method="POST" action="">
             <legend>Información personal</legend>
             <div class="row">
                 <div class="col-md form-group">
                     <label class="form-label">Nombre</label>
-                    <input class="form-control" id="formName" placeholder="Escribe tu nombre(s)..." required>
-                </div>
-
-                <div class="col-md form-group">
-                    <label class="form-label">Apellido</label>
-                    <input class="form-control" id="formLastName" placeholder="Escribe tu apellido(s)..." required>
+                    <input class="form-control" id="formName" placeholder="Escribe tu nombre completo..." required>
                 </div>
             </div>
 
