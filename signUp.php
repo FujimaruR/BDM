@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("../backEnd/registerUser.php");
+include("../BDM/backEnd/registerUser.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">

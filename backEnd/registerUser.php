@@ -1,7 +1,7 @@
 <?php
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
-    include('../BackEnd/connection/cn_db.php');
+    include('../BDM/BackEnd/connection/cn_db.php');
 
     $name = trim($_POST['usuario']);
     $email = trim($_POST['correoLogin']);
