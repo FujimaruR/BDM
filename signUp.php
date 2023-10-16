@@ -45,9 +45,9 @@ include("../BDM/backEnd/registerUser.php");
                     <label class="form-label">Sexo</label>
                     <select class="form-select" id="formGender" name="formGender" required>
                         <option selected value="">Selecciona tu sexo</option>
-                        <option value="1">Hombre</option>
-                        <option value="2">Mujer</option>
-                        <option value="3">Si</option>
+                        <option value="Hombre">Hombre</option>
+                        <option value="Mujer">Mujer</option>
+                        <option value="Otro">Otro</option>
                     </select>
                 </div>
             </div>
@@ -70,8 +70,7 @@ include("../BDM/backEnd/registerUser.php");
             <div class="row">
                 <div class="col-md form-group">
                     <label class="form-label">Imagen de perfil</label>
-                    <input class="form-control" style="background-size: 50vh" type="file" id="formFile" name="formFile" onchange="loadFile(event)" required>
-                    <img id="formFileUploaded"/>
+                    <input class="form-control" style="background-size: 50vh" type="file" id="formFile" name="formFile" required>
                 </div>
 
                 <div class="col-md form-group">
@@ -114,8 +113,6 @@ include("../BDM/backEnd/registerUser.php");
     <?php
         include_once('assets/footer.php');
     ?>
-
-    <script src="../BDM/scripts/cargarImagen.js"></script>
 
 </body>
 

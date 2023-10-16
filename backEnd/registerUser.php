@@ -1,8 +1,6 @@
 <?php
-include('../BDM/backEnd/connection/cn_bd.php');
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-
-    
+    include('../BDM/backEnd/connection/cn_bd.php');
 
     $name = trim($_POST['formName']);
     $fecha_nacimiento = trim($_POST['trip-start']);
@@ -21,13 +19,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         $extension = pathinfo($nombreArchivo, PATHINFO_EXTENSION);
         if (!in_array(strtolower($extension), $extensionesPermitidas)) {
-            header("Location: ../BDM/singUp.php?error=Archivo%20no%20permitido.");
+            header("Location: ../singUp.php?error=Archivo%20no%20permitido.");
             exit();
         }
 
         $contenidoArchivo = file_get_contents($rutaTempArchivo);
     } else {
-        header("Location: ../BDM/singUp.php?error=Error%20al%20subir%20el%20archivo.");
+        header("Location: ../singUp.php?error=Error%20al%20subir%20el%20archivo.");
         exit();
     }
 
@@ -43,7 +41,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $stmt_email->execute();
 
         if ($stmt_email->rowCount() > 0) {
-            header("Location: ../BDM/singUp.php?error=Este%20correo%20electrónico%20ya%20está%20registrado.");
+            header("Location: ../singUp.php?error=Este%20correo%20electrónico%20ya%20está%20registrado.");
             exit();
         }
 
@@ -63,10 +61,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     
         if($stmt->execute()){
             $_SESSION['usuario'] = $email;
-            header("Location: ../BDM/main.php");
+            header("Location: ../main.php");
             exit(); 
         } else {
-            header("Location: ../BDM/singUp.php?error=Error%20en%20la%20creacion%20del%20usuario.");
+            header("Location: ../singUp.php?error=Error%20en%20la%20creacion%20del%20usuario.");
             exit();
         }
     } catch(PDOException $e) {

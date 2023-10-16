@@ -9,7 +9,7 @@ try {
 
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    echo "Conexión a la base de datos establecida correctamente";
+    //echo "Conexión a la base de datos establecida correctamente";
 
 } catch(PDOException $e) {
     if ($e->getCode() == 2006) {
