@@ -1,0 +1,8 @@
+En esta parte asignamos los pendientes en el proyecto para este avance.
+
+* es completo
+
+- es incompleto
+|---------------------------------------------------------------------------|
+
+
