@@ -19,6 +19,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
             if (password_verify($contrab, $hashed_password)  && $tuser == $db_tuser) {
                 $_SESSION['usuario'] = $emaila;
+                $_SESSION['tipo_usuario'] = $tuser;
                 header("Location: ../main.php");
                 exit(); 
             } else {

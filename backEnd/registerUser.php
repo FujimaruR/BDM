@@ -50,13 +50,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         VALUES (:nombre, :email, :contrasena, :tuser, :fecha_registro, :imag, :comname, :datebirth, :sex)";
 
         $stmt = $conn->prepare($consulta);
-        $stmt->bindParam(':nombre', $name);
+        $stmt->bindParam(':nombre', $nomcom);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':contrasena', $hashed_password);
         $stmt->bindParam(':tuser', $tuser);
         $stmt->bindParam(':fecha_registro', $fecha_registro);
         $stmt->bindParam(':imag', $contenidoArchivo);
-        $stmt->bindParam(':comname', $nomcom);
+        $stmt->bindParam(':comname', $name);
         $stmt->bindParam(':datebirth', $fecha_nacimiento);
         $stmt->bindParam(':sex', $sexo);
     
