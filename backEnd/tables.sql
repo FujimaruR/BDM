@@ -18,13 +18,7 @@ CREATE TABLE IF NOT EXISTS Users (
     postalCode VARCHAR(10),
     city VARCHAR(50),
     state VARCHAR(50),
-    debitCard VARCHAR(16),
-    isDebitCard BOOLEAN,
-    isPaypal BOOLEAN,
-    isOxxo BOOLEAN,
-    superAdminId INT,
-    nameSearch VARCHAR(255),
-    action VARCHAR(50)
+    debitCard VARCHAR(16)
 );
 
 CREATE TABLE IF NOT EXISTS Products (
@@ -33,7 +27,6 @@ CREATE TABLE IF NOT EXISTS Products (
     p_name VARCHAR(100),
     p_description TEXT,
     p_quantity INT,
-    p_method VARCHAR(20),
     p_price DECIMAL(10, 2),
     p_status VARCHAR(20),
     p_views INT,
@@ -44,65 +37,124 @@ CREATE TABLE IF NOT EXISTS Products (
     p_adminId INT,
     p_categoryId INT,
     p_categoriesIds VARCHAR(255),
-    productCategoryId INT,
     productmediaId INT,
     p_photo VARCHAR(255),
     p_video VARCHAR(255),
-    p_nameSearch VARCHAR(255),
-    p_limitSearch INT,
-    p_action VARCHAR(50),
     FOREIGN KEY (p_clientId) REFERENCES Users(userId),
     FOREIGN KEY (p_sellerId) REFERENCES Users(userId),
-    FOREIGN KEY (p_adminId) REFERENCES Users(userId),
-    FOREIGN KEY (p_categoryId) REFERENCES Categories(p_categoryId)
+    FOREIGN KEY (p_adminId) REFERENCES Users(userId)
+    -- FOREIGN KEY (p_categoryId) REFERENCES Categories(p_categoryId),
+    -- FOREIGN KEY (productmediaId) REFERENCES ProductPhotos(productmediaId)
 );
 
 CREATE TABLE IF NOT EXISTS Wishlists (
     p_listwishId INT PRIMARY KEY,
+    listname VARCHAR(100),
+    listphoto BLOB,
+    listdesc TEXT,
     p_name VARCHAR(100),
-    p_description TEXT,
+    p_price DECIMAL(10, 2),
     p_photo VARCHAR(255),
     p_listType VARCHAR(20),
     p_clientId INT,
     p_productId INT,
-    p_action VARCHAR(50),
     FOREIGN KEY (p_clientId) REFERENCES Users(userId),
-    FOREIGN KEY (p_name) REFERENCES Products(p_name)
-    
+    FOREIGN KEY (p_productId) REFERENCES Products(p_productId)
 );
 
 CREATE TABLE IF NOT EXISTS Carts (
     p_cartId INT PRIMARY KEY,
-    p_isActive BOOLEAN,
     p_clientId INT,
-    p_cartProductId INT,
     p_quantity INT,
     p_productId INT,
+    p_name VARCHAR(100),
     p_price DECIMAL(10, 2),
-    p_payMethod VARCHAR(20),
-    p_recordId INT,
     p_sellerId INT,
-    p_comment TEXT,
-    p_valoration DECIMAL(3, 2),
-    p_recordProductId INT,
-    p_orderBy VARCHAR(20),
-    p_categories VARCHAR(255),
-    p_cuotationId INT,
-    p_status VARCHAR(20),
-    p_action VARCHAR(50),
+    cartsubtotal DECIMAL(10, 2),
+    carttotal DECIMAL(10, 2),
     FOREIGN KEY (p_clientId) REFERENCES Users(userId),
     FOREIGN KEY (p_sellerId) REFERENCES Users(userId),
-    FOREIGN KEY (p_productId) REFERENCES Products(p_productId),
-    FOREIGN KEY (p_cartProductId) REFERENCES Wishlists(p_listwishId)
+    FOREIGN KEY (p_productId) REFERENCES Products(p_productId)
+);
+
+CREATE TABLE IF NOT EXISTS Ticket (
+    ticketId INT PRIMARY KEY,
+    p_sellerId INT,
+    dateof TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    total DECIMAL(10, 2),
+    methodpay VARCHAR(50), 
+    FOREIGN KEY (p_sellerId) REFERENCES Users(userId)
+);
+
+CREATE TABLE IF NOT EXISTS DetailTicket (
+    detailId INT PRIMARY KEY,
+    ticketId INT,
+    p_productId INT,
+    p_quantity INT,
+    p_price DECIMAL(10, 2),
+    subtotal DECIMAL(10, 2),
+    FOREIGN KEY (ticketId) REFERENCES Ticket(ticketId),
+    FOREIGN KEY (p_productId) REFERENCES Products(p_productId)
+);
+
+CREATE TABLE IF NOT EXISTS QuotationClient (
+    quClientId INT PRIMARY KEY,
+    p_clientId INT, -- Clave foránea que hace referencia al cliente que solicita la cotización
+    dateQu TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    total DECIMAL(10, 2), -- El costo total de la cotización
+    q_status VARCHAR(50), -- El estado de la cotización (por ejemplo, pendiente, aprobada, rechazada)
+    FOREIGN KEY (p_clientId) REFERENCES Users(userId)
+);
+
+CREATE TABLE IF NOT EXISTS DetailQuotationClient (
+    detailQuClientId INT PRIMARY KEY,
+    quClientId INT, -- Clave foránea que hace referencia a la cotización de cliente
+    p_productId INT, -- Clave foránea que hace referencia al producto cotizado
+    p_quantity INT,
+    p_price DECIMAL(10, 2),
+    subtotal DECIMAL(10, 2), -- El costo subtotal del producto en la cotización
+    FOREIGN KEY (quClientId) REFERENCES QuotationClient(quClientId),
+    FOREIGN KEY (p_productId) REFERENCES Products(p_productId)
+);
+
+CREATE TABLE IF NOT EXISTS QuotationSeller (
+    quSellerId INT PRIMARY KEY,
+    p_sellerId INT, -- Clave foránea que hace referencia al vendedor que responde a la cotización
+    dateQu TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    total DECIMAL(10, 2), -- El costo total de la cotización
+    q_status VARCHAR(50), -- El estado de la cotización (por ejemplo, pendiente, aprobada, rechazada)
+    FOREIGN KEY (p_sellerId) REFERENCES Users(userId)
+);
+
+CREATE TABLE IF NOT EXISTS DetailQuotationSeller (
+    detailQuSellerrId INT PRIMARY KEY,
+    quSellerId INT, -- Clave foránea que hace referencia a la cotización de vendedor
+    p_productId INT, -- Clave foránea que hace referencia al producto cotizado
+    p_quantity INT,
+    p_price DECIMAL(10, 2),
+    subtotal DECIMAL(10, 2), -- El costo subtotal del producto en la cotización
+    FOREIGN KEY (quSellerId) REFERENCES QuotationSeller(quSellerId),
+    FOREIGN KEY (p_productId) REFERENCES Products(p_productId)
 );
 
 CREATE TABLE IF NOT EXISTS Categories (
     p_categoryId INT PRIMARY KEY,
     p_isActive BOOLEAN,
-    p_name VARCHAR(50),
-    p_description TEXT,
-    p_photo VARCHAR(255),
+    category_name VARCHAR(50),
+    c_description TEXT,
+    c_photo VARCHAR(255),
     p_adminId INT,
-    p_action VARCHAR(50),
-
+    FOREIGN KEY (p_adminId) REFERENCES Users(userId)
 );
+
+CREATE TABLE ProductPhotos (
+    productmediaId INT PRIMARY KEY,
+    p_productId INT, 
+    p_photo VARCHAR(255),
+    p_video VARCHAR(255),
+    FOREIGN KEY (p_productId) REFERENCES Products(p_productId)
+);
+
+ALTER TABLE Products
+ADD FOREIGN KEY (p_categoryId) REFERENCES Categories(p_categoryId),
+ADD FOREIGN KEY (productmediaId) REFERENCES ProductPhotos(productmediaId);
