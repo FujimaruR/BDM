@@ -9,7 +9,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $email = trim($_POST['formEmail']);
     $contra = trim($_POST['formPassword']);
     $tuser = trim($_POST['formRole']);
-    $fecha_registro = date("d/m/y");
+    $timestamp = time();
+    $fecha_registro = date("Y-m-d H:i:s", $timestamp);
 
     if (isset($_FILES['formFile']) && $_FILES['formFile']['error'] === UPLOAD_ERR_OK) {
         $nombreArchivo = $_FILES['formFile']['name'];
